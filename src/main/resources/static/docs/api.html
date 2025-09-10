@@ -476,6 +476,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_5_admin_api">5.Admin API</a>
 <ul class="sectlevel3">
 <li><a href="#_5_1_관리자_게시글_삭제">5.1 관리자 게시글 삭제</a></li>
+<li><a href="#_5_2_관리자_역할_수정">5.2 관리자 역할 수정</a></li>
 </ul>
 </li>
 </ul>
@@ -614,7 +615,7 @@ Content-Length: 261
 {
   "status" : 200,
   "msg" : "성공",
-  "body" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODA4OTc4OH0.ekm_q2SSqDfPD11kj1ErSiIKYyTvzOhGeqNH0r7Nb_sFpArC1PofmxunQP2m2-EI5lwTHGUN7m09bu4aFT00dQ"
+  "body" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODExNDY2N30.Smrwzu_Wn2RnwrqcU-8LWLU9K136_SB_adGUDnHNH_rLNdFa6eLt7Hg3z65aELKfUjy2XpcGCWKgLy0wIx5riQ"
 }</code></pre>
 </div>
 </div>
@@ -672,7 +673,7 @@ Content-Length: 87
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/users/1 HTTP/1.1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODA4OTc4OX0.7xTtZOOLzKcHTNF_RVeg_x5dsfgA1dVkPt3W1tF7DRYdZX20rILfXic7SJmn19qDrM5KvLJh_PmSpYQDBMjP4A
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODExNDY2N30.Smrwzu_Wn2RnwrqcU-8LWLU9K136_SB_adGUDnHNH_rLNdFa6eLt7Hg3z65aELKfUjy2XpcGCWKgLy0wIx5riQ
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -716,7 +717,7 @@ Content-Length: 164
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">PUT /api/users HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODA4OTc4OX0.7xTtZOOLzKcHTNF_RVeg_x5dsfgA1dVkPt3W1tF7DRYdZX20rILfXic7SJmn19qDrM5KvLJh_PmSpYQDBMjP4A
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODExNDY2N30.Smrwzu_Wn2RnwrqcU-8LWLU9K136_SB_adGUDnHNH_rLNdFa6eLt7Hg3z65aELKfUjy2XpcGCWKgLy0wIx5riQ
 Content-Length: 64
 Host: localhost:8080
 
@@ -768,7 +769,7 @@ Content-Length: 164
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/boards HTTP/1.1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODA4OTc4OX0.7xTtZOOLzKcHTNF_RVeg_x5dsfgA1dVkPt3W1tF7DRYdZX20rILfXic7SJmn19qDrM5KvLJh_PmSpYQDBMjP4A
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODExNDY2N30.Smrwzu_Wn2RnwrqcU-8LWLU9K136_SB_adGUDnHNH_rLNdFa6eLt7Hg3z65aELKfUjy2XpcGCWKgLy0wIx5riQ
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -827,7 +828,7 @@ Content-Length: 439
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /api/boards HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODA4OTc4OX0.7xTtZOOLzKcHTNF_RVeg_x5dsfgA1dVkPt3W1tF7DRYdZX20rILfXic7SJmn19qDrM5KvLJh_PmSpYQDBMjP4A
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODExNDY2N30.Smrwzu_Wn2RnwrqcU-8LWLU9K136_SB_adGUDnHNH_rLNdFa6eLt7Hg3z65aELKfUjy2XpcGCWKgLy0wIx5riQ
 Content-Length: 61
 Host: localhost:8080
 
@@ -875,7 +876,7 @@ Content-Length: 139
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/boards/5 HTTP/1.1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODA4OTc4OX0.7xTtZOOLzKcHTNF_RVeg_x5dsfgA1dVkPt3W1tF7DRYdZX20rILfXic7SJmn19qDrM5KvLJh_PmSpYQDBMjP4A
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODExNDY2N30.Smrwzu_Wn2RnwrqcU-8LWLU9K136_SB_adGUDnHNH_rLNdFa6eLt7Hg3z65aELKfUjy2XpcGCWKgLy0wIx5riQ
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -932,7 +933,7 @@ Content-Length: 445
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">PUT /api/boards/1 HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODA4OTc4OX0.7xTtZOOLzKcHTNF_RVeg_x5dsfgA1dVkPt3W1tF7DRYdZX20rILfXic7SJmn19qDrM5KvLJh_PmSpYQDBMjP4A
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODExNDY2N30.Smrwzu_Wn2RnwrqcU-8LWLU9K136_SB_adGUDnHNH_rLNdFa6eLt7Hg3z65aELKfUjy2XpcGCWKgLy0wIx5riQ
 Content-Length: 61
 Host: localhost:8080
 
@@ -980,7 +981,7 @@ Content-Length: 139
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">DELETE /api/boards/1 HTTP/1.1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODA4OTc4OX0.7xTtZOOLzKcHTNF_RVeg_x5dsfgA1dVkPt3W1tF7DRYdZX20rILfXic7SJmn19qDrM5KvLJh_PmSpYQDBMjP4A
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODExNDY2N30.Smrwzu_Wn2RnwrqcU-8LWLU9K136_SB_adGUDnHNH_rLNdFa6eLt7Hg3z65aELKfUjy2XpcGCWKgLy0wIx5riQ
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -1022,7 +1023,7 @@ Content-Length: 61
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /api/replies HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODA4OTc4OX0.7xTtZOOLzKcHTNF_RVeg_x5dsfgA1dVkPt3W1tF7DRYdZX20rILfXic7SJmn19qDrM5KvLJh_PmSpYQDBMjP4A
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODExNDY2N30.Smrwzu_Wn2RnwrqcU-8LWLU9K136_SB_adGUDnHNH_rLNdFa6eLt7Hg3z65aELKfUjy2XpcGCWKgLy0wIx5riQ
 Content-Length: 52
 Host: localhost:8080
 
@@ -1073,7 +1074,7 @@ Content-Length: 198
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">DELETE /api/replies/4 HTTP/1.1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODA4OTc4OX0.7xTtZOOLzKcHTNF_RVeg_x5dsfgA1dVkPt3W1tF7DRYdZX20rILfXic7SJmn19qDrM5KvLJh_PmSpYQDBMjP4A
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FyIiwicm9sZXMiOiJVU0VSIiwiaWQiOjEsImV4cCI6MTc1ODExNDY2N30.Smrwzu_Wn2RnwrqcU-8LWLU9K136_SB_adGUDnHNH_rLNdFa6eLt7Hg3z65aELKfUjy2XpcGCWKgLy0wIx5riQ
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -1114,7 +1115,7 @@ Content-Length: 61
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">DELETE /api/admin/boards/1 HTTP/1.1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3MiLCJyb2xlcyI6IkFETUlOIiwiaWQiOjIsImV4cCI6MTc1ODA4OTc4OH0.knfE31V90MvzKGHa97vL5hdQHDWr4Ko4w0B4KFZDP_q-N0xRYGsuK88DRjmBiQFGM6vH8WtEmp0udrWYFVDswQ
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3MiLCJyb2xlcyI6IkFETUlOIiwiaWQiOjIsImV4cCI6MTc1ODExNDY2Nn0.Vnq0i22RjjpED7nwciE_JPD4EsDiQetrdlijULNCJ3fU6AZ_cwOnliJdvn0EWt6GhYRFpwb8hp4J4GXXh_Phmg
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -1142,12 +1143,53 @@ Content-Length: 61
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_5_2_관리자_역할_수정">5.2 관리자 역할 수정</h4>
+<div class="sect4">
+<h5 id="_put_apiadminusersid">PUT /api/admin/users/{id}</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">PUT /api/admin/users/1 HTTP/1.1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3MiLCJyb2xlcyI6IkFETUlOIiwiaWQiOjIsImV4cCI6MTc1ODExNDY2Nn0.Vnq0i22RjjpED7nwciE_JPD4EsDiQetrdlijULNCJ3fU6AZ_cwOnliJdvn0EWt6GhYRFpwb8hp4J4GXXh_Phmg
+Host: localhost:8080
+Content-Type: application/x-www-form-urlencoded</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 0
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: SAMEORIGIN
+Content-Length: 165
+
+{
+  "status" : 200,
+  "msg" : "성공",
+  "body" : {
+    "id" : 1,
+    "username" : "ssar",
+    "email" : "ssar@metacoding.com",
+    "roles" : "ADMIN"
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1-SNAPSHOT<br>
-Last updated 2025-09-10 15:16:10 +0900
+Last updated 2025-09-10 22:09:11 +0900
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">

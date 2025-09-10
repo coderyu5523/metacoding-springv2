@@ -9,9 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.metacoding.springv2.auth.AuthRequest;
 import com.metacoding.springv2.auth.AuthResponse;
-import com.metacoding.springv2.core.handler.ex.Exception401;
-import com.metacoding.springv2.core.handler.ex.Exception403;
-import com.metacoding.springv2.core.handler.ex.Exception404;
+import com.metacoding.springv2.core.handler.ex.*;
 import com.metacoding.springv2.core.util.JwtUtil;
 
 import lombok.RequiredArgsConstructor;
@@ -67,5 +65,16 @@ public class UserService {
             mapDTO.put("available", true);
         }
         return mapDTO;
+    }
+
+    @Transactional
+    public AuthResponse.DTO 관리자_역할수정(Integer userId){
+        User findUser = userRepository.findById(userId)
+        .orElseThrow(() -> new Exception404("회원을 찾을 수 없습니다"));
+        if(findUser.getRoles().equals("ADMIN")){
+            throw new Exception403("역할을 수정할 수 없습니다");
+        }
+       findUser.updateRoles("ADMIN");
+       return new AuthResponse.DTO(findUser);
     }
 }

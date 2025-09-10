@@ -26,7 +26,7 @@ public class User implements UserDetails {
     private String password;
     @Column(length = 30, nullable = false)
     private String email;
-    private String roles;
+    private String roles = "USER";
 
     @CreationTimestamp
     private Timestamp createdAt;
@@ -44,6 +44,10 @@ public class User implements UserDetails {
     public void update(String email, String password) {
         this.email = email;
         this.password = password;
+    }
+
+    public void updateRoles(String roles) {
+        this.roles = roles;
     }
 
     @Override

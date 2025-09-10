@@ -166,3 +166,11 @@ include::{snippets}/{reply}/delete-by-id_success_test/http-response.adoc[]
 include::{snippets}/{admin}/delete-by-id_success_test/http-request.adoc[]
 
 include::{snippets}/{admin}/delete-by-id_success_test/http-response.adoc[]
+
+==== 5.2 관리자 역할 수정
+
+===== PUT /api/admin/users/{id}
+
+include::{snippets}/{admin}/roles-update_success_test/http-request.adoc[]
+
+include::{snippets}/{admin}/roles-update_success_test/http-response.adoc[]

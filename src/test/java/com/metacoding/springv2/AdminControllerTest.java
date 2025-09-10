@@ -3,6 +3,8 @@ package com.metacoding.springv2;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.beans.Transient;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,8 +20,8 @@ import com.metacoding.springv2.user.User;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 class AdminControllerTest extends MyRestDoc {
 
-        private String accessToken;
-        private String failToken;
+        private String userToken;
+        private String adminToken;
 
         @BeforeEach
         void setUp() {
@@ -31,7 +33,7 @@ class AdminControllerTest extends MyRestDoc {
                                 .email("ssar@metacoding.com")
                                 .roles("USER")
                                 .build();
-                accessToken = JwtUtil.create(user);
+                userToken = JwtUtil.create(user);
 
                 User user2 = User.builder()
                                 .id(2)
@@ -40,7 +42,7 @@ class AdminControllerTest extends MyRestDoc {
                                 .email("cos@metacoding.com")
                                 .roles("ADMIN")
                                 .build();
-                failToken = JwtUtil.create(user2);
+                adminToken = JwtUtil.create(user2);
         }
 
         // 관리자 게시글 삭제 성공
@@ -52,7 +54,7 @@ class AdminControllerTest extends MyRestDoc {
                 // when
                 ResultActions result = mvc.perform(
                                 MockMvcRequestBuilders.delete("/api/admin/boards/" + boardId)
-                                                .header("Authorization", failToken));
+                                                .header("Authorization", adminToken));
                 // then
                 result.andExpect(status().isOk())
                                 .andExpect(jsonPath("$.status").value(200))
@@ -70,12 +72,33 @@ class AdminControllerTest extends MyRestDoc {
                 // when
                 ResultActions result = mvc.perform(
                                 MockMvcRequestBuilders.delete("/api/admin/boards/" + boardId)
-                                                .header("Authorization", accessToken));
+                                                .header("Authorization", userToken));
                 // then
                 result.andExpect(status().isForbidden())
                                 .andExpect(jsonPath("$.status").value(403))
                                 .andExpect(jsonPath("$.msg").value("권한이 없습니다"))
                                 .andExpect(jsonPath("$.body").isEmpty())
+                                .andDo(MockMvcResultHandlers.print()).andDo(document);
+        }
+
+        // 관리자 게시글 역할 수정 성공
+        @Test
+        public void rolesUpdate_success_test() throws Exception {
+                // given
+                Integer userId = 1;
+                // when
+                ResultActions result = mvc.perform(
+                        MockMvcRequestBuilders.put("/api/admin/users/" + userId)
+                                        .header("Authorization", adminToken));
+
+                // then
+                result.andExpect(status().isOk())
+                                .andExpect(jsonPath("$.status").value(200))
+                                .andExpect(jsonPath("$.msg").value("성공"))
+                                .andExpect(jsonPath("$.body.id").value(1))
+                                .andExpect(jsonPath("$.body.username").value("ssar"))
+                                .andExpect(jsonPath("$.body.email").value("ssar@metacoding.com"))
+                                .andExpect(jsonPath("$.body.roles").value("ADMIN"))
                                 .andDo(MockMvcResultHandlers.print()).andDo(document);
         }
 }
