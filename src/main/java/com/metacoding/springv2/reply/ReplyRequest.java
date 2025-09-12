@@ -3,7 +3,7 @@ package com.metacoding.springv2.reply;
 import com.metacoding.springv2.board.Board;
 import com.metacoding.springv2.user.User;
 
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public class ReplyRequest {
 

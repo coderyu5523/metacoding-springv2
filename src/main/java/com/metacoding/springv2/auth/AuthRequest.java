@@ -2,10 +2,7 @@ package com.metacoding.springv2.auth;
 
 import com.metacoding.springv2.user.User;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public class AuthRequest {
     public record JoinDTO(
@@ -26,4 +23,9 @@ public class AuthRequest {
             @NotEmpty(message = "유저네임을 입력해주세요") String username,
             @NotBlank(message = "비밀번호를 입력해주세요") String password) {
     }
+
+    public record RolesDTO(
+        @NotEmpty(message = "역할을 설정해주세요") String roles){
+    }
+    
 }

@@ -26,7 +26,7 @@ public class User implements UserDetails {
     private String password;
     @Column(length = 30, nullable = false)
     private String email;
-    private String roles = "USER";
+    private String roles = "USER"; // 디폴트값은 USER
 
     @CreationTimestamp
     private Timestamp createdAt;
